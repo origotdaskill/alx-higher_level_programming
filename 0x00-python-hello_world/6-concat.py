@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-str1 = "Welcome to"
-str2 = "Holberton School!"
-print(f"{str1} {str2}")
+str1 = "holberton"
+str2 = "School!"
+str3 = "welcome to"
+print(f"{str3} {str1} {str2}")
