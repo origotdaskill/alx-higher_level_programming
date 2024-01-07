@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-import string; __import__('os').write(1, bytes(string.ascii_uppercase + '\n', 'UTF-8'))
-
+print(''.join(chr(i) for i in range(65, 91)))
