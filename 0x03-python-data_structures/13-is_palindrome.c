@@ -51,24 +51,6 @@ int is_palindrome(listint_t **head)
 
     return 1;
 }
-/**
- * copy_list - creates a copy of a linked list
- * @head: pointer to the head of the original list
- * Return: pointer to the head of the copied list
- */
-listint_t *copy_list(listint_t *head)
-{
-    listint_t *new_head = NULL;
-    listint_t *current = head;
-
-    while (current != NULL)
-    {
-        add_nodeint_end(&new_head, current->n);
-        current = current->next;
-    }
-
-    return new_head;
-}
 
 /**
  * reverse_list - reverses a linked list
@@ -109,4 +91,16 @@ int compare_lists(listint_t *list1, listint_t *list2)
 
     return (list1 == NULL && list2 == NULL);
 }
+listint_t *copy_list(listint_t *head)
+{
+    listint_t *new_head = NULL;
+    listint_t *current = head;
 
+    while (current != NULL)
+    {
+        add_nodeint_end(&new_head, current->n);
+        current = current->next;
+    }
+
+    return new_head;
+}
