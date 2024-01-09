@@ -2,6 +2,7 @@
 #define LISTS_H
 
 #include <stddef.h>
+
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -22,9 +23,5 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 
-listint_t *reverse_list(listint_t *head);
-int compare_lists(listint_t *list1, listint_t *list2);
-listint_t *copy_list(listint_t *head);
-
-
 #endif /* LISTS_H */
+
