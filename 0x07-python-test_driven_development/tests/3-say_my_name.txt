@@ -1,0 +1,21 @@
+# Testing say_my_name function
+
+# Test Case 1: Valid case with both first_name and last_name
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test Case 2: Valid case with only first_name
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+# Test Case 3: Valid case with only first_name (default last_name)
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test Case 4: Invalid case with first_name as an integer
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Add more test cases as needed
