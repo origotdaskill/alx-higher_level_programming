@@ -1,0 +1,19 @@
+# Test Case 1: Regular list
+>>> max_integer([1, 2, 3, 4])
+4
+
+# Test Case 2: Unordered list
+>>> max_integer([1, 3, 4, 2])
+4
+
+# Test Case 3: Empty list
+>>> max_integer([])
+None
+
+# Test Case 4: List with negative numbers
+>>> max_integer([-1, -5, -3])
+-1
+
+# Test Case 5: List with float numbers
+>>> max_integer([1.5, 2.7, 0.5])
+2.7

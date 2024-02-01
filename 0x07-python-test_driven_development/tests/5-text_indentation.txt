@@ -1,0 +1,27 @@
+# Test Case 1: Regular text with '.', '?', and ':'
+>>> text_indentation("Hello. How are you? This is a test: Good luck!")
+Hello
+ How are you
+ This is a test
+ Good luck
+!
+
+# Test Case 2: Text with extra spaces
+>>> text_indentation("Hello.  How are you?   This is a test:  Good luck!")
+Hello
+  How are you
+   This is a test
+   Good luck
+!
+
+# Test Case 3: Text with no '.', '?', or ':'
+>>> text_indentation("No punctuation in this text.")
+No punctuation in this text.
+
+# Test Case 4: Empty text
+>>> text_indentation("")
+!
+
+# Test Case 5: Text with only spaces
+>>> text_indentation("    ")
+!
