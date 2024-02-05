@@ -12,4 +12,3 @@ class MyList(list):
     def __str__(self):
         """Override the string representation of MyList"""
         return super().__str__()
-
