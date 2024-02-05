@@ -1,7 +1,10 @@
 # Test cases for MyList class
 
+# Import the MyList class from the correct module
+>>> MyList = __import__('1-my_list').MyList
+
 # Create an instance of MyList
->>> my_list = __import__('1-my_list').MyList
+>>> my_list = MyList()
 
 # Append elements to the list
 >>> my_list.append(1)
