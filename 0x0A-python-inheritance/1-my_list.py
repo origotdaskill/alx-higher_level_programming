@@ -1,18 +1,15 @@
 #!/usr/bin/python3
-"""
-Module for MyList class.
-"""
+"""Module with MyList class"""
 
 
 class MyList(list):
-    """
-    A class that inherits from list.
+    """Custom list class"""
 
-    Public Methods:
-    - print_sorted(): Prints the list sorted in ascending order.
-    """
     def print_sorted(self):
-        """
-        Prints the list sorted in ascending order.
-        """
+        """Print the list in ascending order"""
         print(sorted(self))
+
+    def __str__(self):
+        """Override the string representation of MyList"""
+        return super().__str__()
+
