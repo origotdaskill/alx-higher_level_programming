@@ -10,10 +10,6 @@ def append_write(filename="", text=""):
     Returns:
         int: The number of characters added to the file.
     """
-    try:
-        with open(filename, 'a', encoding='utf-8') as file:
-            file.write(text)
-            return len(text)
-    except Exception as e:
-        print(f"Error: {e}")
-        return 0
+    with open(filename, 'a', encoding='utf-8') as file:
+        nb_characters_added = file.write(text)
+    return nb_characters_added
