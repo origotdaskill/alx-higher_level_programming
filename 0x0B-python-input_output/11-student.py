@@ -23,7 +23,7 @@ class Student:
         Retrieve a dictionary representation of a Student.
 
         Args:
-            attrs (list): List of attribute names to retrieve (default is None).
+            attrs (list): List of attribute to retrieve (default is None).
 
         Returns:
             dict: A dictionary representation of the student instance.
