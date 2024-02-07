@@ -1,8 +1,16 @@
 #!/usr/bin/python3
+"""Module to generate and print Pascal's Triangle."""
 
 
 def pascal_triangle(n):
-    """Generate Pascal's Triangle up to the nth row."""
+    """Generate Pascal's Triangle up to the nth row.
+
+    Args:
+        n (int): The number of rows to generate in the triangle.
+
+    Returns:
+        list: A list of lists representing Pascal's Triangle up to the nth row.
+    """
     triangle = []
 
     if n <= 0:
@@ -19,6 +27,10 @@ def pascal_triangle(n):
 
 
 def print_triangle(triangle):
-    """Print the triangle."""
+    """Print the triangle.
+
+    Args:
+        triangle (list): A list of lists representing Pascal's Triangle.
+    """
     for row in triangle:
         print("[{}]".format(",".join([str(x) for x in row])))
