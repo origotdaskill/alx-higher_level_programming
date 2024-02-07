@@ -8,7 +8,7 @@ This module provides a function to append a string at the end of a text file.
 
 def append_write(filename="", text=""):
     """
-    Appends a string at the end of a text file and returns the number of characters added.
+    Appends a string at the end of a text file and returns the number added.
 
     Args:
         filename (str): The name of the file to append to.
