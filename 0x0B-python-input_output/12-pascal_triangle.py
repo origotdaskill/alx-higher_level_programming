@@ -17,6 +17,7 @@ def pascal_triangle(n):
 
     return triangle
 
+
 def print_triangle(triangle):
     """Print the triangle."""
     for row in triangle:
