@@ -7,7 +7,15 @@ class Rectangle(Base):
     """Rectangle class that inherits from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize Rectangle instance with width, height, x, y, and id"""
+        """Initialize Rectangle instance with width, height, x, y, and id
+
+       Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
+            id (int, optional): The identifier of the rectangle. Defaults to None.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -21,7 +29,15 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Setter for width attribute"""
+        """Setter for width attribute
+
+        Args:
+            value (int): The value to set as the width.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -35,7 +51,15 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Setter for height attribute"""
+        """Setter for height attribute
+
+        Args:
+            value (int): The value to set as the height.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -49,7 +73,15 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Setter for x attribute"""
+        """Setter for x attribute
+
+        Args:
+            value (int): The value to set as the x-coordinate.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -63,7 +95,15 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Setter for y attribute"""
+        """Setter for y attribute
+
+        Args:
+            value (int): The value to set as the y-coordinate.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -71,7 +111,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Compute and return the area of the rectangle"""
+        """Compute and return the area of the rectangle
+        
+        Returns:
+            int: The area of the rectangle.
+        """
         return self.width * self.height
 
     def display(self):
@@ -81,11 +125,20 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        """Return string representation of the Rectangle instance"""
+        """Return string representation of the Rectangle instance
+        
+        Returns:
+            str: The string representation of the Rectangle instance.
+        """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
-        """Assign arguments to attributes"""
+        """Assign arguments to attributes
+        
+        Args:
+            *args: Variable length argument list for positional arguments.
+            **kwargs: Arbitrary keyword arguments for named arguments.
+        """
         if args:
             attrs = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
@@ -93,8 +146,13 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
     def to_dictionary(self):
-        """Return dictionary representation of the Rectangle instance"""
+        """Return dictionary representation of the Rectangle instance
+        
+        Returns:
+            dict: A dictionary representation of the Rectangle instance.
+        """
         return {
             'id': self.id,
             'width': self.width,
