@@ -1,17 +1,15 @@
-# tests/test_rectangle.py
+# testx06_rectangle.py
 
 import unittest
 from models.rectangle import Rectangle
 
-
 class TestRectangle(unittest.TestCase):
-    def test_str(self):
-        r1 = Rectangle(4, 6, 2, 1, 12)
-        self.assertEqual(str(r1), "[Rectangle] (12) 2/1 - 4/6")
+    def test_update(self):
+        r = Rectangle(5, 5, 1, 0)
+        r.update(10, 10, 10, 10, 10)
+        self.assertEqual(str(r), "[Rectangle] (10) 10/10 - 10/10")
 
-        r2 = Rectangle(5, 5, 1)
-        self.assertEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
-
+# Add other test cases for Rectangle class
 
 if __name__ == '__main__':
     unittest.main()

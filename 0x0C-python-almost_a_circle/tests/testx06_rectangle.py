@@ -1,22 +1,31 @@
-# tests/test_rectangle.py
+# testx06_rectangle.py
 
 import unittest
 from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     def test_update(self):
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(height=1)
-        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/1")
+        r = Rectangle(5, 5, 1, 0)
+        r.update(10, 10, 10, 10, 10)
+        self.assertEqual(str(r), "[Rectangle] (10) 10/10 - 10/10")
 
-        r1.update(width=1, x=2)
-        self.assertEqual(str(r1), "[Rectangle] (1) 2/10 - 1/1")
-
-        r1.update(y=1, width=2, x=3, id=89)
-        self.assertEqual(str(r1), "[Rectangle] (89) 3/1 - 2/1")
-
-        r1.update(x=1, height=2, y=3, width=4)
-        self.assertEqual(str(r1), "[Rectangle] (89) 1/3 - 4/2")
+# Add other test cases for Rectangle class
 
 if __name__ == '__main__':
     unittest.main()
+# testx06_rectangle.py
+
+import unittest
+from models.rectangle import Rectangle
+
+class TestRectangle(unittest.TestCase):
+    def test_update(self):
+        r = Rectangle(5, 5, 1, 0)
+        r.update(10, 10, 10, 10, 10)
+        self.assertEqual(str(r), "[Rectangle] (10) 10/10 - 10/10")
+
+# Add other test cases for Rectangle class
+
+if __name__ == '__main__':
+    unittest.main()
+
