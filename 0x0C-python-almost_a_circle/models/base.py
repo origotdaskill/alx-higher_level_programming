@@ -3,6 +3,7 @@
 
 import json
 
+
 class Base:
     """Base class for managing id attribute"""
 
@@ -35,7 +36,9 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w") as file:
             list_dicts = [obj.to_dictionary() for obj in list_objs]
-            list_dicts_sorted = [dict(sorted(d.items(), key=lambda item: item[0])) for d in list_dicts]
+            list_dicts_sorted = [dict(sorted(d.items(),
+                                             key=lambda item: item[0]))
+                                 for d in list_dicts]
             file.write(Base.to_json_string(list_dicts_sorted))
 
     @staticmethod
@@ -67,6 +70,9 @@ class Base:
             with open(filename, "r") as file:
                 json_string = file.read()
                 dictionaries = cls.from_json_string(json_string)
-                return [cls.create(**dictionary) for dictionary in dictionaries]
+                return [
+                        cls.create(**dictionary)
+                        for dictionary in dictionaries
+                        ]
         except FileNotFoundError:
             return []

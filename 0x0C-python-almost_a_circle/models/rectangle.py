@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Rectangle class that inherits from Base"""
 
@@ -12,9 +13,9 @@ class Rectangle(Base):
        Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
-            id (int, optional): The identifier of the rectangle. Defaults to None.
+            x (int, optional): The x-coordinate of the rectangle's position.
+            y (int, optional): The y-coordinate of the rectangle's position.
+            id (int, optional): The identifier of the rectangle.
         """
         super().__init__(id)
         self.width = width
@@ -112,29 +113,32 @@ class Rectangle(Base):
 
     def area(self):
         """Compute and return the area of the rectangle
-        
+
         Returns:
             int: The area of the rectangle.
         """
         return self.width * self.height
 
     def display(self):
-        """Print the Rectangle instance with '#' characters, taking care of x and y"""
+        """Print the Rectangle instance with '#' characters"""
         print("\n" * self.y, end="")
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Return string representation of the Rectangle instance
-        
+
         Returns:
             str: The string representation of the Rectangle instance.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return (
+                f"[Rectangle] ({self.id})"
+                f"{self.x}/{self.y} - {self.width}/{self.height}"
+                )
 
     def update(self, *args, **kwargs):
         """Assign arguments to attributes
-        
+
         Args:
             *args: Variable length argument list for positional arguments.
             **kwargs: Arbitrary keyword arguments for named arguments.
@@ -149,7 +153,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Return dictionary representation of the Rectangle instance
-        
+
         Returns:
             dict: A dictionary representation of the Rectangle instance.
         """
