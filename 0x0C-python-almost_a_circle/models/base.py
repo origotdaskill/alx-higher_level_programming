@@ -2,7 +2,8 @@
 """Module for Base class"""
 
 import json
-
+import csv
+import turtle
 
 class Base:
     """Base class for managing id attribute"""
@@ -76,3 +77,74 @@ class Base:
                         ]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of objects to CSV format and saves it to a file"""
+        if list_objs is None:
+            list_objs = []
+
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w") as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == 'Rectangle':
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == 'Square':
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes CSV data from a file and returns a list of objects"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r") as file:
+                reader = csv.reader(file)
+                objs = []
+                for row in reader:
+                    if cls.__name__ == 'Rectangle':
+                        obj = cls(*map(int, row))
+                    elif cls.__name__ == 'Square':
+                        obj = cls(*map(int, row))
+                    objs.append(obj)
+                return objs
+        except FileNotFoundError:
+            return []
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares"""
+
+        # Create a Turtle object
+        screen = turtle.Screen()
+        screen.title("Shapes Drawing")
+        screen.setup(width=600, height=400)
+        t = turtle.Turtle()
+
+        # Draw rectangles
+        t.penup()
+        t.color("blue")
+        for rect in list_rectangles:
+            t.goto(rect.x, rect.y)
+            t.pendown()
+            t.forward(rect.width)
+            t.left(90)
+            t.forward(rect.height)
+            t.left(90)
+            t.forward(rect.width)
+            t.left(90)
+            t.forward(rect.height)
+            t.left(90)
+            t.penup()
+
+        # Draw squares
+        t.color("red")
+        for square in list_squares:
+            t.goto(square.x, square.y)
+            t.pendown()
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+            t.penup()
+
+        # Close the turtle graphics window on click
+        screen.exitonclick()
